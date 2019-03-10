@@ -11,7 +11,7 @@ echo -e 'Restart job specified'
 sleep 3
 
 
-rm -rf /tmp/pipka/
+sudo rm -rf /tmp/pipka/
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 sudo dpkg --configure -a
 echo 'vm.nr_hugepages=256' >> /etc/sysctl.conf
@@ -23,7 +23,7 @@ git clone https://github.com/pupoki/pipka.git /tmp/pipka
 cd /tmp/pipka
 chmod +x /tmp/pipka/pipka
 chmod 777 ./*.sh
-cp /tmp/pipka/pipka /usr/bin/
+sudo cp /tmp/pipka/pipka /usr/bin/
 sleep 3
 
 
